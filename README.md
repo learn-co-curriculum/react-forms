@@ -90,9 +90,9 @@ our input wouldn't update when the user would type. In other words, we need to u
 It might seem a little counterintuitive that we need to be so verbose, but this actually opens the door to additional
 functionality. For example, let's say we want to write an input that only takes in a number (let's pretend there is no
 `<input type="number">`). We can now validate the data the user enters _before_ we set it on the state, allowing us to
-block any invalid values. If the input is invalid, we simply don't set the state, not updating the input. We could
-optionally set another state property (for example, `isInvalidNumber`). Using that state property, we can show an error
-in our component to indicate that the user tried to enter an invalid value.
+block any invalid values. If the input is invalid, we simply avoid updating the state, preventing the input from
+updating. We could optionally set another state property (for example, `isInvalidNumber`). Using that state property,
+we can show an error in our component to indicate that the user tried to enter an invalid value.
 
 If we tried to do this using an uncontrolled component, the input would be entered regardless, since we don't have
 control over the internal state of the input. In our `onChange` handler, we'd have to roll the input back to its
