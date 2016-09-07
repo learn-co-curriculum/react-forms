@@ -96,7 +96,7 @@ we can show an error in our component to indicate that the user tried to enter a
 
 If we tried to do this using an uncontrolled component, the input would be entered regardless, since we don't have
 control over the internal state of the input. In our `onChange` handler, we'd have to roll the input back to its
-previous value, which is pretty tedious!.
+previous value, which is pretty tedious!
 
 ## Resources
 - [React Forms](https://facebook.github.io/react/docs/forms.html)
