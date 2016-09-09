@@ -1,10 +1,15 @@
 # React Controlled Components
 
+## Overview 
+
+In this lesson, we'll discuss components and how to use components to set and get values in form elements. 
+
 ## Objectives
 1. Explain how React uses `value` on, e.g., `<input>`
-2. Describe strategies for using controlled components
-3. Explain how we can use controlled inputs to validate values
-4. Explain the difference between `value` and `defaultValue` in a React
+2. Check whether a component is controlled or uncontrolled
+3. Describe strategies for using controlled components
+4. Use controlled inputs to validate values
+5. Distinguish between `value` and `defaultValue` in a React
    controlled component
    
 ## Form basics
