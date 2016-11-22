@@ -53,9 +53,9 @@ class ControlledInput extends React.Component {
     };
   }
   
-  handleChange(ev) {
+  handleChange(event) {
     this.setState({
-      value: ev.target.value,
+      value: event.target.value,
     });
   }
 
