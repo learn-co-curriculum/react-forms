@@ -11,6 +11,10 @@ In this lesson, we'll discuss components and how to use components to set and ge
 4. Use controlled inputs to validate values
 5. Distinguish between `value` and `defaultValue` in a React controlled component
    
+## Code Along 
+
+If you want to code a long there is starter code in the `src` folder. Make sure to run `npm install && npm start` to see the code in the browser.
+
 ## Form basics
 ![You'll be writing a lot of forms in React.](http://s2.quickmeme.com/img/95/95a52393032e643e9817eda6d7485cc770865ea6929278386c8e723a6ca42adc.jpg)
 
@@ -42,18 +46,19 @@ To set an initial value for the element, we'd use the `defaultValue` prop. We ca
 In controlled components, we explicitly set the value of a component, and update that value in response to any changes the user makes to the value of that component. That might sound a little wonky, but when you see the code, it'll become much clearer:
 
 ```js
+// src/components/ControlledInput.js
+import React from 'react';
+
 class ControlledInput extends React.Component {
   constructor() {
     super();
-    
-    this.handleChange = this.handleChange.bind(this);
     
     this.state = {
       value: '',
     };
   }
   
-  handleChange(event) {
+  handleChange = event => {
     this.setState({
       value: event.target.value,
     });
@@ -61,10 +66,28 @@ class ControlledInput extends React.Component {
 
   render() {
     return (
-      <input type="text" value={this.state.value} onChange={this.handleChange} />
+      <input 
+        type="text" 
+        value={this.state.value} 
+        onChange={this.handleChange} 
+      />
     );
   }
 }
+
+export default ControlledInput;
+
+
+// src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import ControlledInput from './components/ControlledInput';
+
+ReactDOM.render(
+  <ControlledInput />,
+  document.getElementById('root')
+);
 ```
 
 As you can see, we can easily define the initial value by setting the initial `value` property on the state to whatever we want. 
