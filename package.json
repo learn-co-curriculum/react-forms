@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "^1.0.7",
-    "webpack": "^1.14.0",
+    "webpack": "^2.2.0",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
