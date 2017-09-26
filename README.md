@@ -13,7 +13,7 @@ In this lesson, we'll discuss components and how to use components to set and ge
    
 ## Code Along 
 
-If you want to code a long there is starter code in the `src` folder. Make sure to run `npm install && npm start` to see the code in the browser.
+If you want to code along there is starter code in the `src` folder. Make sure to run `npm install && npm start` to see the code in the browser.
 
 ## Form basics
 ![You'll be writing a lot of forms in React.](http://s2.quickmeme.com/img/95/95a52393032e643e9817eda6d7485cc770865ea6929278386c8e723a6ca42adc.jpg)
@@ -92,7 +92,7 @@ ReactDOM.render(
 
 As you can see, we can easily define the initial value by setting the initial `value` property on the state to whatever we want. 
 
-Using a controlled component is the preferred way to do things in React — it allows us to keep _all_ component state in the React state, instead of relying on the DOM to retrieve the element's value through its internal state. Whenever our state\ changes, the component re-renders, rendering the input with the new updated value. If we don't update the state, our input wouldn't update when the user would type. In other words, we need to update our input's state _programmatically_.
+Using a controlled component is the preferred way to do things in React — it allows us to keep _all_ component state in the React state, instead of relying on the DOM to retrieve the element's value through its internal state. Whenever our state changes, the component re-renders, rendering the input with the new updated value. If we don't update the state, our input wouldn't update when the user would type. In other words, we need to update our input's state _programmatically_.
 
 It might seem a little counterintuitive that we need to be so verbose, but this actually opens the door to additional functionality. For example, let's say we want to write an input that only takes in a number (let's pretend there is no `<input type="number">`). We can now validate the data the user enters _before_ we set it on the state, allowing us to block any invalid values. If the input is invalid, we simply avoid updating the state, preventing the input from updating. We could optionally set another state property (for example, `isInvalidNumber`). Using that state property, we can show an error in our component to indicate that the user tried to enter an invalid value.
 
