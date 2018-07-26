@@ -22,7 +22,7 @@ to run `npm install && npm start` to see the code in the browser.
 Forms in React are similar to their regular HTML counterparts. The JSX we write
 is almost identical. The way we store and handle form data, however, is entirely
 new. In React, it is often a good idea to set up _controlled_ forms. A
-controlled form is a form that derives its input values from state. Consider the
+controlled form is **a form that derives its input values from state**. Consider the
 following:
 
 ```js
@@ -35,8 +35,8 @@ class Form extends Component {
   render() {
     return (
       <form>
-        <input type="text" id="firstName" value={this.state.firstName} />
-        <input type="text" id="lastName" value={this.state.lastName} />
+        <input type="text" name="firstName" value={this.state.firstName} />
+        <input type="text" name="lastName" value={this.state.lastName} />
       </form>
     )
   }
@@ -57,8 +57,8 @@ their user data pre-populated. This way, they can easily make small changes
 without rewriting all their profile info.
 
 In a React app, all the user info displayed on a user profile would already be
-stored in state somewhere on the application (its already being displayed after
-all).  By setting the value of inputs based on state as we did above, we can
+stored in state somewhere on the application. Its already being displayed after
+all.  By setting the value of inputs based on state as we did above, we can
 bring in existing state or props and populate a form dynamically.
 
 There is a problem, though. The set up we've created is only half finished.
@@ -75,7 +75,7 @@ order to initiate a state change, but when would we fire it?
 
 We want to fire it **every time the form changes**. Forms should display
 whatever changes a user makes, even if it is adding a single letter in an input.
-For this, we use a event listener React has set up for us:
+For this, we use an event listener React has set up for us:
 
 ```js
 <input type="text" id="firstName" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
@@ -105,19 +105,22 @@ handleLastNameChange = event => {
 
 The `event` contains data about the `target`, which is whatever the `event` was
 triggered on. That `target`, being an `input`, has a `value` attribute. This
-attribute is equal to whatever has been entered into `input`, which in the case
-of our first input, would be a combination of whatever `this.state.firstName` is
-equal to _plus_ the last key stroke. If you pressed 's', `event.target.value`
-would equal "Johns".
+attribute is equal to whatever has been entered into `input`. **This is not the
+value we provided from state**. When we read `event.target.value`, we get
+whatever content is present when the event fired. In the case of our first
+input, that would be a combination of whatever `this.state.firstName` is equal to
+_plus_ **the last key stroke**. If you pressed 's', `event.target.value` would equal
+"Johns".
 
 In these methods, we're updating state based on `event.target.value`. This in
 turn causes a re-render... and the cycle completes. The _new_ state values we
-just set are used to set the values of our `input`s. From a user's perspective,
-the form behaves exactly how we'd expect. From React's perspective, we gain
-control over form values, giving us the ability to manipulate what our `inputs`s
-display.
+just set are used to set the `value` attributes of our two `input`s. From a
+user's perspective, the form behaves exactly how we'd expect, displaying the
+text that is typed. From React's perspective, we gain control over form values,
+giving us the ability to more easily manipulate what our `inputs`s display, send
+form data to other parts of the app or out onto the internet...
 
-Controlling forms also makes it more convenient to share form values between
+Controlling forms makes it more convenient to share form values between
 components. Since the form values are stored in state, they are easily passed
 down as props, or sent upward via a function supplied in props.
 
@@ -142,7 +145,7 @@ Each of these attributes can be set based on a state value. Each also has an
 `onChange` event listener, allowing us to update state when a user interacts
 with a form.
 
-## Uncontrolled vs controlled components
+## Uncontrolled vs Controlled Components
 
 ![Kpop](https://media.giphy.com/media/QcnfLD17Ebt28/giphy.gif)
 
@@ -162,10 +165,10 @@ component is either controlled or uncontrolled, but it cannot be both.
 #### Uncontrolled Components
 
 In uncontrolled components, the state of the component's value is kept in the
-DOM itself — in other words, the form element in question (e.g. an `<input>`)
-has its _own internal state_. To retrieve that value, we would need direct
-access to the DOM component that holds the value, _or_ we'd have to add an
-`onChange` handler.
+DOM itself like a regular old HTML form— in other words, the form element in
+question (e.g. an `<input>`) has its _own internal state_. To retrieve that
+value, we would need direct access to the DOM component that holds the value,
+_or_ we'd have to add an `onChange` handler.
 
 To set an initial value for the element, we'd use the `defaultValue` prop. We
 can't use the `value` prop for this: we're not using state to explicitly store
@@ -206,12 +209,8 @@ at some code to make things clearer:
 import React from 'react';
 
 class ControlledInput extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: '',
-    };
+  state = {
+    value: '',
   }
 
   handleChange = event => {
@@ -235,8 +234,11 @@ class ControlledInput extends React.Component {
 
 export default ControlledInput;
 
+```
 
+```js
 // src/index.js
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -248,9 +250,9 @@ ReactDOM.render(
 );
 ```
 
-As you can see, we can easily define the initial value by setting the initial
-`value` property on the state to whatever we want. When you enter something into
-the `input`, the value is captured and set as the new state.
+As you can see, we can easily define the initial value by setting the  `value`
+property on the state to whatever we want. When you enter something into the
+`input`, the value is captured and set as the new state.
 
 Doing something with a submitted form also ends up cleaner:
 
@@ -263,9 +265,10 @@ handleSubmit = event => {
 ```
 
 In this case, our entire state object is just the controlled form data, so we
-send the entire object around wherever it needs to go. Not only that, if we
-expanded our form to have _20_ controlled inputs, `handleSubmit` doesn't change.
-It just send all _20_ state values wherever we need them to go on submission.
+can send the entire object around wherever it needs to go. Not only that, if we
+expanded our form to have _20_ controlled inputs, this `handleSubmit` doesn't
+change. It just sends all _20_ state values wherever we need them to go upon
+submission.
 
 **Note:** Most often, submitting a form would involve sending a request to a server
 somewhere online. We won't get into async React just yet.
@@ -294,6 +297,56 @@ If we tried to do this using an uncontrolled component, the input would be
 entered regardless, since we don't have control over the internal state of the
 input. In our `onChange` handler, we'd have to roll the input back to its
 previous value, which is pretty tedious!
+
+## Bonus - Abstracting `setState` When `onChange` is Triggered
+
+You're still here? Well, while you are, let's talk about the `onChange` event
+we've got set up in our ControlledInput component. We have two methods in the
+class that seem very very similar:
+
+```js
+handleFirstNameChange = event => {
+  this.setStaet({
+    firstName: event.target.value
+  })
+}
+
+handleLastNameChange = event => {
+  this.setStaet({
+    lastName: event.target.value
+  })
+}
+```
+
+Since each one is changing a different value in our state, we've got them
+separated here. You can imagine that once we've got a more complicated form,
+this route may result in a very cluttered component. Instead of separate
+methods, we could actually condense this down into one abstracted component.
+Since `event` is being passed in as the argument, we have access to some of the
+`event.target` attributes that may be present.
+
+In this example, our two inputs:
+
+```js
+<input type="text" name="firstName" value={this.state.firstName} />
+<input type="text" name="lastName" value={this.state.lastName} />
+```
+
+Have `name` attributes. If we make sure the `name` attributes match keys in our
+state, we can write a generic `handleChange` method like so:
+
+```js
+handleLastNameChange = event => {
+  this.setStaet({
+    [event.target.name]: event.target.value
+  })
+}
+```
+
+If we connect this method to both of our `input`s, they will both correctly
+update state. Why? Because for the first `input`, `event.target.name` is set to
+`firstName`, while in the second `input`, it is set to `lastName`. Each
+`input`'s `name` attribute will change which part of state is actually updated!
 
 ## Resources
 
