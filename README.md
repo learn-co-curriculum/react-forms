@@ -126,8 +126,6 @@ down as props, or sent upward via a function supplied in props.
 
 ## More on Forms
 
-![You'll be writing a lot of forms in React.](http://s2.quickmeme.com/img/95/95a52393032e643e9817eda6d7485cc770865ea6929278386c8e723a6ca42adc.jpg)
-
 Form elements include `<input>`, `<textarea>`, `<select>`, and `<form>` itself.
 When we talk about inputs in this lesson, we broadly mean the form elements
 (`<input>`, `<textarea>`, `<select>`) and not always specifically just
