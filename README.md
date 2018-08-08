@@ -91,13 +91,13 @@ what these functions look like:
 
 ```js
 handleFirstNameChange = event => {
-  this.setStaet({
+  this.setState({
     firstName: event.target.value
   })
 }
 
 handleLastNameChange = event => {
-  this.setStaet({
+  this.setState({
     lastName: event.target.value
   })
 }
@@ -304,13 +304,13 @@ class that seem very very similar:
 
 ```js
 handleFirstNameChange = event => {
-  this.setStaet({
+  this.setState({
     firstName: event.target.value
   })
 }
 
 handleLastNameChange = event => {
-  this.setStaet({
+  this.setState({
     lastName: event.target.value
   })
 }
@@ -335,7 +335,7 @@ state, we can write a generic `handleChange` method like so:
 
 ```js
 handleLastNameChange = event => {
-  this.setStaet({
+  this.setState({
     [event.target.name]: event.target.value
   })
 }
