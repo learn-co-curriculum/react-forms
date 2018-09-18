@@ -334,7 +334,7 @@ Have `name` attributes. If we make sure the `name` attributes match keys in our
 state, we can write a generic `handleChange` method like so:
 
 ```js
-handleLastNameChange = event => {
+handleChange = event => {
   this.setState({
     [event.target.name]: event.target.value
   })
