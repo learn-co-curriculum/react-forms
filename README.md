@@ -189,7 +189,7 @@ accessing _can_ sometimes be a pain, as you end up writing things like
 handleSubmit = event => {
   event.preventDefault()
   const firstName = event.target.children[0].value
-  const lasstName = event.target.children[1].value
+  const lastName = event.target.children[1].value
   this.sendFormDataSomewhere({ firstName, lastName })
 }
 ```
