@@ -57,7 +57,7 @@ their user data pre-populated. This way, they can easily make small changes
 without rewriting all their profile info.
 
 In a React app, all the user info displayed on a user profile would already be
-stored in state somewhere on the application. Its already being displayed after
+stored in state somewhere on the application. It's already being displayed after
 all.  By setting the value of inputs based on state as we did above, we can
 bring in existing state or props and populate a form dynamically.
 
