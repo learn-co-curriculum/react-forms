@@ -51,7 +51,7 @@ This turns out to be very useful for a specific purpose - since we can set our
 state _elsewhere_, using this set up, its easy to populate forms from available
 data.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_20_Flowchart.png" width="200" alt="Diagram of the form component's state populating a form"/>
+<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_20_Flowchart.png" width="300" alt="Diagram of the form component's state populating a form"/>
 
 Imagine a user profile page with an 'Edit' button that opens a form for updating
 user info. When a user clicks that 'Edit' button, they expect to see a form with
@@ -105,7 +105,7 @@ handleLastNameChange = event => {
 }
 ```
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_21_FlowchartUpdate.png" width="200" alt="Diagram of onChange events" />
+<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_21_FlowchartUpdate.png" width="300" alt="Diagram of onChange events" />
 
 The `event` contains data about the `target`, which is whatever the `event` was
 triggered on. That `target`, being an `input`, has a `value` attribute. This
@@ -256,7 +256,7 @@ As you can see, we can easily define the initial value by setting the  `value`
 property on the state to whatever we want. When you enter something into the
 `input`, the value is captured and set as the new state.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_22_FlowchartReactProps.png" width="200" alt="Diagram of a controlled component using props" />
+<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_22_FlowchartReactProps.png" width="300" alt="Diagram of a controlled component using props" />
 
 Doing something with a submitted form also ends up cleaner:
 
@@ -351,7 +351,7 @@ update state. Why? Because for the first `input`, `event.target.name` is set to
 `firstName`, while in the second `input`, it is set to `lastName`. Each
 `input`'s `name` attribute will change which part of state is actually updated!
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png" width="200" alt="Diagram of controlled components using props" />
+<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png" width="300" alt="Diagram of controlled components using props" />
 
 ## Resources
 
