@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Form from './components/Form'
 
 ReactDOM.render(
-  <div>Mount Components Here</div>,
+  <div>
+    <Form />
+  </div>,
   document.getElementById('root')
 );
