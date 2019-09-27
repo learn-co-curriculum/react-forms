@@ -69,8 +69,8 @@ whatever changes a user makes, even if it is adding a single letter in an input.
 For this, we use an event listener, `onChange`, that React has set up for us:
 
 ```js
-<input type="text" id="firstName" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
-<input type="text" id="lastName" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
+<input type="text" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
+<input type="text" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
 ```
 
 Form inputs in React come with specific events. `onChange` will fire every time
@@ -137,8 +137,8 @@ class Form extends React.Component {
   render() {
     return (
       <form>
-        <input type="text" id="firstName" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
-        <input type="text" id="lastName" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
+        <input type="text" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
+        <input type="text" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
       </form>
     )
   }
@@ -171,8 +171,16 @@ to submit our form. For this, we use a second event, `onSubmit`, added to the
 render() {
   return (
     <form onSubmit={event => this.handleSubmit(event)}>
-      <input type="text" id="firstName" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
-      <input type="text" id="lastName" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
+      <input
+        type="text"
+        onChange={event => this.handleFirstNameChange(event)}
+        value={this.state.firstName}
+      />
+      <input
+        type="text"
+        onChange={event => this.handleLastNameChange(event)}
+        value={this.state.lastName}
+      />
     </form>
   )
 }
@@ -252,8 +260,16 @@ class Form extends React.Component {
     return (
       <div>
         <form onSubmit={event => this.handleSubmit(event)}>
-          <input type="text" id="firstName" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
-          <input type="text" id="lastName" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
+          <input
+            type="text"
+            onChange={event => this.handleFirstNameChange(event)}
+            value={this.state.firstName}
+          />
+          <input
+            type="text"
+            onChange={event => this.handleLastNameChange(event)}
+            value={this.state.lastName}
+          />
           <input type="submit"/>
         </form>
         {this.listOfSubmissions()}
