@@ -517,7 +517,7 @@ class ParentComponent extends React.Component {
 Now we have a component that reads from the same state we're changing with
 the form.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png" width="300" alt="Diagram of controlled components using props" />
+<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png" width="600" alt="Diagram of controlled components using props" />
 
 This can be a very useful way to capture user input and utilize it throughout
 your application, even if a server is not involved.
