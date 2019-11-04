@@ -377,16 +377,17 @@ sends all _20_ state values wherever we need them to go upon submission.
 ## Why Use Controlled Forms When We Do Not Have To
 
 Controlled forms can very useful for specific purposes - since we can set our
-state _elsewhere_, using this setup, its easy to populate forms from available
-data.
+state _elsewhere_ using this setup, its easy to populate forms from existing 
+available data.
 
 When we have a controlled form, the state does not need to be stored in the same
 component. We could store state in a parent component, instead. To demonstrate
-this, we'll need to create a new component. To keep it simple, we'll call it
+this, we'll need to create a new component. To keep it simple, we'll call this
 `ParentComponent`. `ParentComponent` can maintain all the functions while `Form`
 just handles the display of JSX:
 
 ```js
+// src/components/ParentComponent
 import React from 'react';
 import Form from './Form'
 
@@ -425,6 +426,7 @@ export default ParentComponent;
 Then `Form` can become:
 
 ```js
+// src/components/Form
 import React from 'react';
 
 class Form extends React.Component {
@@ -450,6 +452,11 @@ class Form extends React.Component {
 
 export default Form;
 ```
+
+Previously, our application was rendering `Form` directly inside `src/index.js`. Now, 
+however, we've added a component that _renders_ `Form` as a child. Because of this
+change, you'll need to update `src/index.js` so that it renders `ParentComponent` instead of
+`Form`.
 
 **Aside**: Submission functionality is omitted here for simplicity. Also, If
 you're following along in the example files, don't forget to update `index.js`
