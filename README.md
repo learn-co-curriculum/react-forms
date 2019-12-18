@@ -584,7 +584,7 @@ methods, we could actually condense this down into one abstracted component.
 Since `event` is being passed in as the argument, we have access to some of the
 `event.target` attributes that may be present.
 
-If we give our inputs `name` attributes, we can accss them as `event.target.name`:
+If we give our inputs `name` attributes, we can access them as `event.target.name`:
 
 ```js
 <input type="text" name="firstName" value={this.state.firstName} />
