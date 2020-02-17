@@ -192,7 +192,7 @@ don't have a function `handleSubmit` yet, so let's write one out:
 ```js
 handleSubmit = event => {
   event.preventDefault()
-  formData = { firstName: this.state.firstName, lastName: this.state.lastName }
+  let formData = { firstName: this.state.firstName, lastName: this.state.lastName }
   this.sendFormDataSomewhere(formData)
 }
 ```
@@ -207,7 +207,7 @@ Let's look at each of the three lines of code in this function:
 
 [try and submit the form data based on a defined action]: https://www.w3schools.com/html/html_forms.asp
 
-- `formData = { firstName: this.state.firstName, lastName: this.state.lastName }`: Here, we are putting
+- `let formData = { firstName: this.state.firstName, lastName: this.state.lastName }`: Here, we are putting
   together the current form data using the values stored in state.
 
 - `this.sendFormDataSomewhere(formData)`: A form, when submitted should send the
