@@ -110,7 +110,7 @@ pressed 's', `event.target.value` would equal "Johns".
 
 Inside both functions is `this.setState()`. Again, both functions are nearly
 identical, with one difference &mdash; `handleFirstNameChange()` changes the
-`firstName` attribute, and `handleLastNameChange()` changes the `lastName` attribute
+`firstName` attribute, and `handleLastNameChange()` changes the `lastName` attribute.
 The full component would look like the following:
 
 ```js
@@ -152,8 +152,8 @@ turn, causes a re-render... and the cycle completes. The _new_ state values we
 just set are used to set the `value` attributes of our two `input`s. From a
 user's perspective, the form behaves exactly how we'd expect, displaying the
 text that is typed. From React's perspective, we gain control over form values,
-giving us the ability to more easily manipulate (or restrict) what our `inputs`s display, send
-form data to other parts of the app or out onto the internet...
+giving us the ability to more easily manipulate (or restrict) what our `inputs`s 
+display, and send form data to other parts of the app or out onto the internet...
 
 <img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_21_FlowchartUpdate.png" width="300" alt="Diagram of onChange events" />
 
