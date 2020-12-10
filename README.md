@@ -50,7 +50,7 @@ export default Form;
 With the setup above, the two text `input`s will display the corresponding state
 values.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_20_Flowchart.png" width="300" alt="Diagram of the form component's state populating a form"/>
+![Diagram of the form component's state populating a form](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_20_Flowchart.png
 
 This code is not quite complete though - as it is now, there is no way to _change_
 the state. The inputs in the form above will be stuck displaying whatever state is
@@ -155,7 +155,7 @@ text that is typed. From React's perspective, we gain control over form values,
 giving us the ability to more easily manipulate (or restrict) what our `inputs`s 
 display, and send form data to other parts of the app or out onto the internet...
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_21_FlowchartUpdate.png" width="300" alt="Diagram of onChange events" />
+![Diagram of onChange events](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_21_FlowchartUpdate.png)
 
 Controlling forms makes it more convenient to share form values between
 components. Since the form values are stored in state, they are easily passed
@@ -464,7 +464,7 @@ to point to `ParentComponent`.
 
 With `ParentComponent`, we've moved all the form logic up one level.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_22_FlowchartReactProps.png" width="300" alt="Diagram of a controlled component using props" />
+![Diagram of a controlled component using props](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_22_FlowchartReactProps.png)
 
 Being able to store controlled form data in other components opens some
 interesting doors for us. We could, for instance, create another component, a
@@ -517,7 +517,7 @@ class ParentComponent extends React.Component {
 Now we have a component that reads from the same state we're changing with
 the form.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png" width="300" alt="Diagram of controlled components using props" />
+![Diagram of controlled components using props](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png)
 
 This can be a very useful way to capture user input and utilize it throughout
 your application, even if a server is not involved.
