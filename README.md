@@ -50,7 +50,7 @@ export default Form;
 With the setup above, the two text `input`s will display the corresponding state
 values.
 
-![Diagram of the form component's state populating a form](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_20_Flowchart.png
+![Diagram of the form component's state populating a form](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_20_Flowchart.png)
 
 This code is not quite complete though - as it is now, there is no way to _change_
 the state. The inputs in the form above will be stuck displaying whatever state is
