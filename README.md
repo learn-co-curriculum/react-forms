@@ -50,7 +50,7 @@ export default Form;
 With the setup above, the two text `input`s will display the corresponding state
 values.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_20_Flowchart.png" width="300" alt="Diagram of the form component's state populating a form"/>
+![Diagram of the form component's state populating a form](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_20_Flowchart.png)
 
 This code is not quite complete though - as it is now, there is no way to _change_
 the state. The inputs in the form above will be stuck displaying whatever state is
@@ -110,7 +110,7 @@ pressed 's', `event.target.value` would equal "Johns".
 
 Inside both functions is `this.setState()`. Again, both functions are nearly
 identical, with one difference &mdash; `handleFirstNameChange()` changes the
-`firstName` attribute, and `handleLastNameChange()` changes the `lastName` attribute
+`firstName` attribute, and `handleLastNameChange()` changes the `lastName` attribute.
 The full component would look like the following:
 
 ```js
@@ -152,10 +152,10 @@ turn, causes a re-render... and the cycle completes. The _new_ state values we
 just set are used to set the `value` attributes of our two `input`s. From a
 user's perspective, the form behaves exactly how we'd expect, displaying the
 text that is typed. From React's perspective, we gain control over form values,
-giving us the ability to more easily manipulate (or restrict) what our `inputs`s display, send
-form data to other parts of the app or out onto the internet...
+giving us the ability to more easily manipulate (or restrict) what our `inputs`s 
+display, and send form data to other parts of the app or out onto the internet...
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_21_FlowchartUpdate.png" width="300" alt="Diagram of onChange events" />
+![Diagram of onChange events](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_21_FlowchartUpdate.png)
 
 Controlling forms makes it more convenient to share form values between
 components. Since the form values are stored in state, they are easily passed
@@ -192,7 +192,7 @@ don't have a function `handleSubmit` yet, so let's write one out:
 ```js
 handleSubmit = event => {
   event.preventDefault()
-  formData = { firstName: this.state.firstName, lastName: this.state.lastName }
+  let formData = { firstName: this.state.firstName, lastName: this.state.lastName }
   this.sendFormDataSomewhere(formData)
 }
 ```
@@ -207,7 +207,7 @@ Let's look at each of the three lines of code in this function:
 
 [try and submit the form data based on a defined action]: https://www.w3schools.com/html/html_forms.asp
 
-- `formData = { firstName: this.state.firstName, lastName: this.state.lastName }`: Here, we are putting
+- `let formData = { firstName: this.state.firstName, lastName: this.state.lastName }`: Here, we are putting
   together the current form data using the values stored in state.
 
 - `this.sendFormDataSomewhere(formData)`: A form, when submitted should send the
@@ -377,7 +377,7 @@ sends all _20_ state values wherever we need them to go upon submission.
 ## Why Use Controlled Forms When We Do Not Have To
 
 Controlled forms can very useful for specific purposes - since we can set our
-state _elsewhere_ using this setup, its easy to populate forms from existing 
+state _elsewhere_ using this setup, it's easy to populate forms from existing 
 available data.
 
 When we have a controlled form, the state does not need to be stored in the same
@@ -464,7 +464,7 @@ to point to `ParentComponent`.
 
 With `ParentComponent`, we've moved all the form logic up one level.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_22_FlowchartReactProps.png" width="300" alt="Diagram of a controlled component using props" />
+![Diagram of a controlled component using props](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_22_FlowchartReactProps.png)
 
 Being able to store controlled form data in other components opens some
 interesting doors for us. We could, for instance, create another component, a
@@ -517,7 +517,7 @@ class ParentComponent extends React.Component {
 Now we have a component that reads from the same state we're changing with
 the form.
 
-<img src="https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png" width="600" alt="Diagram of controlled components using props" />
+![Diagram of controlled components using props](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png)
 
 This can be a very useful way to capture user input and utilize it throughout
 your application, even if a server is not involved.
@@ -584,7 +584,7 @@ methods, we could actually condense this down into one abstracted component.
 Since `event` is being passed in as the argument, we have access to some of the
 `event.target` attributes that may be present.
 
-If we give our inputs `name` attributes, we can accss them as `event.target.name`:
+If we give our inputs `name` attributes, we can access them as `event.target.name`:
 
 ```js
 <input type="text" name="firstName" value={this.state.firstName} />
@@ -707,6 +707,3 @@ ReactDOM.render(
 ## Resources
 
 - [React Forms](https://facebook.github.io/react/docs/forms.html)
-- [Controlled vs Uncontrolled](https://www.sitepoint.com/video-controlled-vs-uncontrolled-components-in-react/) - Video
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/react-forms'>Forms</a> on Learn.co and start learning to code for free.</p>
