@@ -251,8 +251,8 @@ class Form extends React.Component {
   }
 
   listOfSubmissions = () => {
-    return this.state.submittedData.map(data => {
-      return <div><span>{data.firstName}</span> <span>{data.lastName}</span></div>
+    return this.state.submittedData.map((data, idx) => {
+      return <div key={idx}><span>{data.firstName}</span> <span>{data.lastName}</span></div>
     })
   }
 
